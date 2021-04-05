@@ -178,13 +178,17 @@ code {
 
 ol { padding-left:20px; }
 .paper-list li{ margin-bottom:10px;}
+.research-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/research.png");background-position: left top;background-size: 20px 23px;background-repeat: no-repeat;}
+.educate-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/school.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
+.activities-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/activities.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .editor-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/editor.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .reviewer-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/reviewer.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .chair-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/chair.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .organizer-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/organizer.png");background-position: left top;background-size: 22px 22px;background-repeat: no-repeat;}
-.project-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/project.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
-.papers-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/paper.png");background-position: left top;background-size: 14px 20px;background-repeat: no-repeat;}
+.project-list li{ margin-left:20px;margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/project1.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
+.papers-list li{ margin-left:20px;margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/paper.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .teach-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/blackboard.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
+.award-list li{ margin-left:5px;margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/award.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 
 @media (max-width: 400px) { 
 	a.custom-navbar-brand{
