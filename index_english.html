@@ -267,10 +267,18 @@ date:April 2021
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	<script src="./Javascript/jquery.min.js"></script>
+    <script src="./Javascript/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 10 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- 为按钮添加点击事件 -->
+	<script>
+	$(document).ready(function(){
+	  $(".navbar-toggle").click(function(){
+		$(".bs-navbar-collapse").toggleClass("in");
+	  });
+	});
+	</script>
   </body>
 
 </html>
