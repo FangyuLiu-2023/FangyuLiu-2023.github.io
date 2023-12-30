@@ -35,7 +35,9 @@
   <script>
     $(document).ready(function(){
       $(".navbar-toggle").click(function(){
-        $(".bs-navbar-collapse").toggleClass("in");
+        setTimeout(function() {
+          $(".bs-navbar-collapse").toggleClass("in");
+        }, 300); // 设置一个延迟时间，以确保点击事件可以正常执行
       });
     });
   </script>
