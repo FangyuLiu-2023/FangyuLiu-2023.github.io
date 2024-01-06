@@ -8,15 +8,57 @@
 <head>
   <meta charset="utf-8">
   <title>Fangyu Liu's Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
   <link rel="icon" type="image/png" href="../icon/team.png">
+  <style>
+    /* 响应式样式 */
+    @media (max-width: 768px) {
+      /* 在这里添加适应小屏幕的样式 */
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .column {
+        width: 100%;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        /*height: auto;*/
+      }
+      .my_carousel{
+          object-fit: contain;
+      }
+      .layui-carousel {
+        max-width: 100%;
+        max-height: 100%;
+        /*height: auto;*/
+      }
+
+      .nav-menu {
+        display: none; /* 隐藏常规导航 */
+      }
+
+      .mobile-menu {
+        display: block; /* 显示移动设备上的折叠菜单 */
+      }
+      .layui-col-md6 {
+        width: 100%; /* 在小屏幕上宽度占据100% */
+        max-width: none; /* 移除最大宽度限制 */
+        max-height: none; /* 移除最大高度限制 */
+        float: none; /* 不浮动，使其在下方显示 */
+      }
+    }
+  </style>
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body>
-<div style="width: 1200px;margin: 0 auto;" id="myNavigationBar">
+<div class="layui-container" id="myNavigationBar">
     <!--导航栏-->
     <ul class="layui-nav layui-bg-blue">
       <li class="layui-nav-item"><a href="../index.html"><img src="../icon/bachelor.png" class="layui-nav-img">个人主页</a></li>
@@ -29,22 +71,22 @@
     </fieldset>
     <div class="layui-bg-gray" style="padding: 30px;">
       <div class="layui-row layui-col-space15"><!--一行放置三个活动的图-->
-        <div class="layui-col-md6" style="width: 385px;height: 400px;float: left;">
+        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
           <div class="layui-panel" style="text-align: center;">
-            <img src="activities/activities1_test.jpg" width="100%" height="300px" id="img10" onclick="fold('0')"><!--点击事件传入参数代表点击的第几个图-->
+            <img src="activities/activities1_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img1" onclick="fold('0')"><!--点击事件传入参数代表点击的第几个图-->
             <div class="layui-collapse" lay-accordion="">
               <div class="layui-colla-item" style="text-align: left;">
                 <h2 class="layui-colla-title">活动一</h2>
                 <div class="layui-colla-content" index="0" flag="close"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>活动内容。</p>
+                  <p>2019.10.11~2019.10.13：活动内容。</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="layui-col-md6" style="width: 385px;height: 400px;float: left;">
+        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
           <div class="layui-panel" style="text-align: center;">
-            <img src="activities/activities2_test.jpg" width="100%" height="300px" id="img1" onclick="fold('1')"><!--点击事件传入参数代表点击的第几个图-->
+            <img src="activities/activities2_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img2" onclick="fold('1')"><!--点击事件传入参数代表点击的第几个图-->
             <div class="layui-collapse" lay-accordion="">
               <div class="layui-colla-item" style="text-align: left;">
                 <h2 class="layui-colla-title">活动二</h2>
@@ -55,9 +97,9 @@
             </div>
           </div>
         </div>
-        <div class="layui-col-md6" style="width: 385px;height: 400px;float: left;">
+        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
           <div class="layui-panel" style="text-align: center;">
-            <img src="activities/activities3_test.jpg" width="100%" height="300px" id="img2" onclick="fold('2')"><!--点击事件传入参数代表点击的第几个图-->
+            <img src="activities/activities3_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img3" onclick="fold('2')"><!--点击事件传入参数代表点击的第几个图-->
             <div class="layui-collapse" lay-accordion="">
               <div class="layui-colla-item" style="text-align: left;">
                 <h2 class="layui-colla-title">活动三</h2>
@@ -69,47 +111,47 @@
           </div>
         </div>
       </div>
-      <div class="layui-row layui-col-space15" style="margin-top: 20px;"><!--一行放置三个活动的图-->
-        <div class="layui-col-md6" style="width: 385px;height: 400px;float: left;">
-          <div class="layui-panel" style="text-align: center;">
-            <img src="activities/activities1_test.jpg" width="100%" height="300px" id="img3" onclick="fold('3')"><!--点击事件传入参数代表点击的第几个图-->
-            <div class="layui-collapse" lay-accordion="">
-              <div class="layui-colla-item" style="text-align: left;">
-                <h2 class="layui-colla-title">活动四</h2>
-                <div class="layui-colla-content" index="3" flag="close"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>2019.12.21：活动内容。</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="layui-col-md6" style="width: 385px;height: 400px;float: left;">
-          <div class="layui-panel" style="text-align: center;">
-            <img src="activities/activities2_test.jpg" width="100%" height="300px" id="img4" onclick="fold('4')"><!--点击事件传入参数代表点击的第几个图-->
-            <div class="layui-collapse" lay-accordion="">
-              <div class="layui-colla-item" style="text-align: left;">
-                <h2 class="layui-colla-title">活动五</h2>
-                <div class="layui-colla-content" index="4" flag="close"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>2019.12.31：活动内容。</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="layui-col-md6" style="width: 385px;height: 400px;float: left;">
-          <div class="layui-panel" style="text-align: center;">
-            <img src="activities/activities4_test.jpg" width="100%" height="300px" id="img5" onclick="fold('5')"><!--点击事件传入参数代表点击的第几个图-->
-            <div class="layui-collapse" lay-accordion="">
-              <div class="layui-colla-item" style="text-align: left;">
-                <h2 class="layui-colla-title">活动六</h2>
-                <div class="layui-colla-content" index="5" flag="close"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>2020.9.13~2020.9.25：活动内容。</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!--      <div class="layui-row layui-col-space15" style="margin-top: 20px;">&lt;!&ndash;一行放置三个活动的图&ndash;&gt;-->
+<!--        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">-->
+<!--          <div class="layui-panel" style="text-align: center;">-->
+<!--            <img src="activities/activities1_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img1" onclick="fold('0')">&lt;!&ndash;点击事件传入参数代表点击的第几个图&ndash;&gt;-->
+<!--            <div class="layui-collapse" lay-accordion="">-->
+<!--              <div class="layui-colla-item" style="text-align: left;">-->
+<!--                <h2 class="layui-colla-title">活动一</h2>-->
+<!--                <div class="layui-colla-content" index="0" flag="close">&lt;!&ndash;index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态&ndash;&gt;-->
+<!--                  <p>2019.10.11~2019.10.13：活动内容。</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">-->
+<!--          <div class="layui-panel" style="text-align: center;">-->
+<!--            <img src="activities/activities2_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img2" onclick="fold('1')">&lt;!&ndash;点击事件传入参数代表点击的第几个图&ndash;&gt;-->
+<!--            <div class="layui-collapse" lay-accordion="">-->
+<!--              <div class="layui-colla-item" style="text-align: left;">-->
+<!--                <h2 class="layui-colla-title">活动二</h2>-->
+<!--                <div class="layui-colla-content" index="1" flag="close">&lt;!&ndash;index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态&ndash;&gt;-->
+<!--                  <p>2019.10.11~2019.10.13：活动内容。</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">-->
+<!--          <div class="layui-panel" style="text-align: center;">-->
+<!--            <img src="activities/activities3_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img3" onclick="fold('2')">&lt;!&ndash;点击事件传入参数代表点击的第几个图&ndash;&gt;-->
+<!--            <div class="layui-collapse" lay-accordion="">-->
+<!--              <div class="layui-colla-item" style="text-align: left;">-->
+<!--                <h2 class="layui-colla-title">活动三</h2>-->
+<!--                <div class="layui-colla-content" index="2" flag="close">&lt;!&ndash;index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态&ndash;&gt;-->
+<!--                  <p>2019.10.17~2019.10.19：活动内容。</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
     <blockquote class="layui-elem-quote">
       <a href="team.html#activities" style="color:#0000FF">》返回团队主页</a>
