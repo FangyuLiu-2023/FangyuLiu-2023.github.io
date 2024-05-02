@@ -20,7 +20,9 @@ date:April 2021
 <link href="./css/custom.css" rel="stylesheet">
 <link href="./css/syntax.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="icon/bachelor.png">
-<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!--[if lt IE 9]>-->
+<!--	<script src="../static/js/ie8-responsive-file-warning.js"></script>-->
+<!--<![endif]-->
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -54,6 +56,7 @@ date:April 2021
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+		<li><a href="#statistical_information">Statistical Information</a></li>
         <li><a href="index_english.html#publications">Homepage</a></li>
 <!--		<li><a href="./team/team_english.html">Research Team</a></li>-->
 		<li><a href="paper.html">中文版本</a></li>
@@ -114,6 +117,30 @@ date:April 2021
 <div class="container">
 	<div class="row">
 		<div class="col-md-12" role="main">
+			<h2 id="statistical_information" class="page-header">Statistical Information</h2>
+			<div class="row">
+			  <div class="col-lg-12">
+				<!-- 使用 Bootstrap 创建表格 -->
+				<table class="table">
+				  <thead>
+					<tr>
+					  <th scope="col">Contents</th>
+					  <th scope="col">Amount</th>
+					</tr>
+				  </thead>
+				  <tbody id="tableBody">
+					<!-- JavaScript 将动态插入表格内容 -->
+				  </tbody>
+				</table>
+			  </div>
+			</div>
+			<!-- 利用 Bootstrap 网格系统创建容器 -->
+			<div class="row">
+			  <div class="col-lg-12">
+				<!-- 设置 echarts 图表容器的大小 -->
+				<div id="echarts_bar" style="width: 100%; height: 500px;"></div>
+			  </div>
+			</div>
 			<h2 id="publications" class="page-header">Published paper</h2>
 			<div class="row">
 				<div class="col-md-12">
@@ -161,8 +188,10 @@ date:April 2021
     <!-- Placed at the end of the document so the pages load faster -->
 	<script src="./Javascript/jquery.min.js"></script>
     <script src="./Javascript/bootstrap.min.js"></script>
+	<script src="./Javascript/echarts.js"></script>
+	<script src="./Javascript/echarts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 10 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+<!--    <script src="js/ie10-viewport-bug-workaround.js"></script>-->
 	<!-- 为按钮添加点击事件 -->
 	<script>
 	$(document).ready(function(){
@@ -170,6 +199,258 @@ date:April 2021
 		$(".bs-navbar-collapse").toggleClass("in");
 	  });
 	});
+	</script>
+    <script>
+		fetch('./assets/citation_data.json')
+			.then(response => response.json())
+			.then(citation_data => {
+				var words_threshold = 0.6
+				// 检查 citation_data 是否存在以及是否包含 years_citations
+				if (citation_data) {
+				// 从 citation_data 中读取 years_citations 对象
+				var citations_per_year_obj = citation_data["citations_per_year"];
+
+				// 检查 years_citations_obj 是否为对象
+				if (typeof citations_per_year_obj === "object") {
+					// 使用 Object.keys() 和 Object.values() 读取键值对
+					var years = Object.keys(citations_per_year_obj);
+					var citations_per_year = Object.values(citations_per_year_obj);
+
+					// 打印结果检查
+					// console.log("Years:", years);
+					// console.log("Citations per year:", citations_per_year);
+
+					// 继续执行你的逻辑
+
+					// 设置echarts图表
+					var chartDom = document.getElementById("echarts_bar");
+					var myChart = echarts.init(chartDom);
+					var option;
+
+					// option = {
+					//   title: {
+					//     text: ' Citations per year',
+					// 	// subtext: ''
+					//   },
+					//   tooltip: {
+					// 	trigger: 'axis',
+					// 	axisPointer: {
+					// 	  type: 'shadow'
+					// 	}
+					//   },
+					//   grid: {
+					// 	left: '3%',
+					// 	right: '4%',
+					// 	bottom: '3%',
+					// 	containLabel: true
+					//   },
+					//   xAxis: [
+					// 	{
+					// 	  type: 'category',
+					// 	  // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+					// 	  data: years,
+					// 	  axisTick: {
+					// 		alignWithLabel: true
+					// 	  }
+					// 	}
+					//   ],
+					//   yAxis: [
+					// 	{
+					// 	  type: 'value'
+					// 	}
+					//   ],
+					//   series: [
+					// 	{
+					// 	  name: 'Direct',
+					// 	  type: 'bar',
+					// 	  barWidth: '60%',
+					// 	  // data: [10, 52, 200, 334, 390, 330, 220],
+					// 	  data: citations_per_year
+					// 	}
+					//   ]
+					// };
+					//
+					// option && myChart.setOption(option);
+
+					// prettier-ignore
+					// let dataAxis = ['2023', '击', '柱', '子', '或', '者', '两', '指', '在', '触', '屏', '上', '滑', '动', '能', '够', '自', '动', '缩', '放'];
+					// prettier-ignore
+					// let data = [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220];
+
+					let yMax = citation_data["total_citations"];
+					let dataShadow = [];
+					for (let i = 0; i < citations_per_year.length; i++) {
+					  dataShadow.push(yMax);
+					}
+					option = {
+					  tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+						  type: 'shadow'
+						}
+					  },
+					  title: {
+						text: 'Citations per year',
+						// subtext: ''
+					  },
+					  xAxis: {
+						// data: ['2023', '击', '柱', '子', '或', '者', '两', '指', '在', '触', '屏', '上', '滑', '动', '能', '够', '自', '动', '缩', '放'],
+						data: years,
+						axisLabel: {
+						  inside: true,
+						  color: '#fff'
+						},
+						axisTick: {
+						  show: false
+						},
+						axisLine: {
+						  show: false
+						},
+						z: 10
+					  },
+					  yAxis: {
+						axisLine: {
+						  show: false
+						},
+						axisTick: {
+						  show: false
+						},
+						axisLabel: {
+						  color: '#999'
+						}
+					  },
+					  dataZoom: [
+						{
+						  type: 'inside'
+						}
+					  ],
+					  series: [
+						{
+						  type: 'bar',
+						  showBackground: true,
+						  itemStyle: {
+							color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+							  { offset: 0, color: '#83bff6' },
+							  { offset: 0.5, color: '#188df0' },
+							  { offset: 1, color: '#188df0' }
+							])
+						  },
+						  emphasis: {
+							itemStyle: {
+							  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+								{ offset: 0, color: '#2378f7' },
+								{ offset: 0.7, color: '#2378f7' },
+								{ offset: 1, color: '#83bff6' }
+							  ])
+							}
+						  },
+						  // data:[220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220]
+						  data: citations_per_year
+						}
+					  ]
+					};
+					// Enable data zoom when user click bar.
+					const zoomSize = 6;
+					myChart.on('click', function (params) {
+					  // console.log(years[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+					  myChart.dispatchAction({
+						type: 'dataZoom',
+						startValue: years[Math.max(params.dataIndex - zoomSize / 2, 0)],
+						endValue:
+						  years[Math.min(params.dataIndex + zoomSize / 2, citations_per_year.length - 1)]
+					  });
+					});
+
+					option && myChart.setOption(option);
+
+				} else {
+					console.error("citations_per_year is not an object.");
+				}
+
+					// 创建一个包含论文标题和引用数量的字典
+					var citations = {};
+
+					// 遍历论文数据，将标题和引用数量存入字典
+					citation_data.publications.forEach(function(publication) {
+						citations[publication.title] = publication.citations;
+					});
+
+					// 获取所有论文列表项
+					var paperItems = document.querySelectorAll(".papers-list li");
+
+					// 遍历每个论文列表项
+					paperItems.forEach(function(item) {
+						var found = false;
+						// 定义匹配阈值
+						// var words_threshold = citation_data['words_threshold'];
+						// 遍历字典中的每个论文标题
+						Object.keys(citations).forEach(function(title) {
+							var titleWords = title.split(/\s+/);
+							var matchedWords = 0;
+							// 统计当前论文标题中与列表项文本内容匹配的单词数量
+							titleWords.forEach(function(word) {
+								if (item.textContent.includes(word)) {
+									matchedWords++;
+								}
+							});
+							// 计算匹配概率
+							var matchProbability = matchedWords / titleWords.length;
+							// 如果匹配概率达到阈值，则认为匹配成功
+							if (matchProbability >= words_threshold) {
+								var citationCount = citations[title];
+								var citationText = "Cited by：" + citationCount;
+								var citationElement = document.createElement("span");
+								citationElement.textContent = citationText;
+								citationElement.style.marginLeft = "10px"; // 设置引用数量的样式
+								item.appendChild(citationElement);
+								// 匹配成功后跳出循环，避免重复添加引用数量信息
+								found = true;
+								return;
+							}
+							// // 如果论文标题存在于当前列表项中
+							// if (item.textContent.includes(title)) {
+							// 	var citationCount = citations[title];
+							// 	var citationText = "Cited by：" + citationCount;
+							// 	var citationElement = document.createElement("span");
+							// 	citationElement.textContent = citationText;
+							// 	citationElement.style.marginLeft = "10px"; // 设置引用数量的样式
+							// 	item.appendChild(citationElement);
+							// 	found = true;
+							// }
+						});
+						// 如果没有找到对应的论文标题，则引用数量设为0
+						if (!found) {
+							var citationText = "Cited by：0";
+							var citationElement = document.createElement("span");
+							citationElement.textContent = citationText;
+							citationElement.style.marginLeft = "10px"; // 设置引用数量的样式
+							item.appendChild(citationElement);
+						}
+					});
+
+					// 设置表格
+					// JavaScript 动态生成表格内容
+					var tableBody = document.getElementById("tableBody");
+					var data_statistics = [
+					{ index: "Publications", value: citation_data['num_papers'] },
+					{ index: "Citations", value: citation_data['total_citations'] },
+					{ index: "h-index", value: citation_data['h'] },
+					{ index: "i10-index", value: citation_data['i10'] },
+					// 可以根据需要添加更多的数据
+					];
+
+					data_statistics.forEach(function(statistic) {
+					var row = document.createElement("tr");
+					row.innerHTML = "<td>" + statistic.index + "</td><td>" + statistic.value + "</td>";
+					tableBody.appendChild(row);
+					});
+				} else {
+					console.error("citation_data or citations_per_year not found in the JSON data.");
+				}
+				})
+			.catch(error => {
+				console.error('Error:', error);
+			});
 	</script>
   </body>
 

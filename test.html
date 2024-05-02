@@ -1,45 +1,450 @@
+<!--&lt;!&ndash;-->
+<!--页面创建:由刘芳宇创建-->
+<!--日期:2021年4月-->
+<!--&ndash;&gt;-->
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--  <title>Navbar Toggle Button</title>-->
-<!--  &lt;!&ndash; 引入 Bootstrap CSS &ndash;&gt;-->
-<!--  <link href="./css/bootstrap.min.css" rel="stylesheet">-->
+
+<!--<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+<!--&lt;!&ndash; Meta, title, CSS, favicons, etc. &ndash;&gt;-->
+<!--<meta charset="utf-8">-->
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--<meta name="description" content="">-->
+<!--<meta name="keywords" content="">-->
+<!--<meta name="author" content="Fangyu Liu">-->
+
+<!--<title>Fangyu Liu</title>-->
+
+<!--&lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
+<!--<link href="./css/bootstrap.min.css" rel="stylesheet">-->
+<!--<link href="./css/custom.css" rel="stylesheet">-->
+<!--<link href="./css/syntax.css" rel="stylesheet">-->
+<!--<link rel="icon" type="image/png" href="icon/bachelor.png">-->
+<!--&lt;!&ndash;[if lt IE 9]>&ndash;&gt;-->
+<!--&lt;!&ndash;	<script src="../static/js/ie8-responsive-file-warning.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<![endif]&ndash;&gt;-->
+
+
+<!--&lt;!&ndash; HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries &ndash;&gt;-->
+<!--&lt;!&ndash;[if lt IE 9]>-->
+<!--  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
+<!--  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
+<!--<![endif]&ndash;&gt;-->
+
+
+<!--  <style type="text/css"></style>-->
+<!--<script>-->
+<!--  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+<!--  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+<!--  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+<!--  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+
+<!--  ga('create', 'UA-9372397-3', 'auto');-->
+<!--  ga('send', 'pageview');-->
+
+<!--</script>-->
 <!--</head>-->
-<!--<body>-->
 
-<!--  &lt;!&ndash; 你的按钮代码 &ndash;&gt;-->
-<!--  <button class="navbar-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target=".bs-navbar-collapse">-->
-<!--    <span class="sr-only">切换导航</span>-->
-<!--    <span class="icon-bar"></span>-->
-<!--    <span class="icon-bar"></span>-->
-<!--    <span class="icon-bar"></span>-->
-<!--  </button>-->
-
-<!--  &lt;!&ndash; 导航栏内容 &ndash;&gt;-->
-<!--  <div class="collapse navbar-collapse bs-navbar-collapse">-->
-<!--    &lt;!&ndash; 实际的导航栏内容 &ndash;&gt;-->
-<!--    <ul>-->
-<!--      <li><a href="#">首页</a></li>-->
-<!--      <li><a href="#">产品</a></li>-->
-<!--      <li><a href="#">服务</a></li>-->
-<!--      &lt;!&ndash; 更多导航链接... &ndash;&gt;-->
-<!--    </ul>-->
+<!--  <body data-twttr-rendered="true">-->
+<!--      <header class="navbar navbar-static-top bs-docs-nav custom_navbar navbar-fixed-top" id="top" role="banner">-->
+<!--    <div class="color_wrapper"></div>-->
+<!--  <div class="container">-->
+<!--    <div class="navbar-header">-->
+<!--      <button class="navbar-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target=".bs-navbar-collapse">-->
+<!--        <span class="sr-only">Toggle navigation</span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    <nav class="collapse navbar-collapse bs-navbar-collapse">-->
+<!--      <ul class="nav navbar-nav navbar-right">-->
+<!--        <li><a href="index.html#publications">返回个人主页</a></li>-->
+<!--&lt;!&ndash;		<li><a href="./team/team.html">研究团队</a></li>&ndash;&gt;-->
+<!--		<li><a href="paper_english.html">English version</a></li>-->
+<!--      </ul>-->
+<!--    </nav>-->
 <!--  </div>-->
+<!--</header>-->
+<!--<div class="nav-space"></div>-->
+<!--  <div class="page-titile-wraper aboutme-wraper">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-3"><img src="assets/fangyu_liu.jpg" style= "margin-top:20px" class="img-responsive img-circle"></div>-->
+<!--      <div class="col-md-9">-->
+<!--		<br>-->
+<!--		<div style="display: inline;">-->
+<!--			<img src="icon/bachelor.png" width="30px" height="35px" style="float:left;margin-top: 15px;margin-right: 10px;"/>-->
+<!--        	<h3 id="about" style="position: relative;"><b>刘芳宇 [Fangyu Liu]</b></h3>-->
+<!--		</div>-->
+<!--		<div style="display: inline;">-->
+<!--			<img src="icon/hat.png" width="30px" height="30px" style="float:left;margin-top: 10px;margin-right: 10px;"/>-->
+<!--        	<h3 style="position: relative;"><b>工学硕士</b></h3>-->
+<!--		</div>-->
+<!--&lt;!&ndash;		<div style="display: inline;">&ndash;&gt;-->
+<!--&lt;!&ndash;			<img src="icon/team.png" width="30px" height="30px" style="float:left;margin-right: 10px;"/>&ndash;&gt;-->
+<!--&lt;!&ndash;			<h4 style="position: relative;margin-top: 15px;"><a href="./team/team.html">研究团队</a></h4>&ndash;&gt;-->
+<!--&lt;!&ndash;		</div>&ndash;&gt;-->
+<!--		<div style="display: inline;">-->
+<!--			<img src="icon/profession.png" width="30px" height="30px" style="float:left;margin-right: 10px;"/>-->
+<!--			<h4 style="position: relative;margin-top: 15px;"><a href="https://www.siat.ac.cn/" target="_blank">中国科学院深圳先进技术研究院</a>，<a href="https://www.ucas.ac.cn/" target="_blank">中国科学院大学</a>博士研究生（在读）</h4>-->
+<!--		</div>-->
+<!--		<br>-->
+<!--		<div style="display: inline;">-->
+<!--			<img src="icon/office.png" width="30px" height="35px" style="float:left;margin-top: -23px;margin-right: 10px;"/>-->
+<!--			<h4 style="position: relative;margin-top: -13px;">深圳市南山区西丽深圳大学城学苑大道1068号</h4>-->
+<!--		</div>-->
+<!--		&lt;!&ndash;<h4>电话: +86 130, +3 69</h4>&ndash;&gt;-->
+<!--		<div style="display: inline;">-->
+<!--			<img src="icon/email.png" width="30px" height="20px" style="float:left;margin-top: 5px;margin-right: 10px;"/>-->
+<!--			<h4 style="position: relative;margin-top: 15px;">fy.liu1@siat.ac.cn</h4>-->
+<!--		</div>-->
+<!--		<br>-->
+<!--		<div style="display: inline;">-->
+<!--			<img src="icon/click1.png" width="30px" height="30px" style="float:left;margin-top: -23px;margin-right: 10px;"/>-->
+<!--			<h4 style="position: relative;margin-top: -15px;"><a href="./paper_english.html">Click to view the English version</a></h4>-->
+<!--		</div>-->
+<!--		<br>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
-<!--  &lt;!&ndash; 引入 Bootstrap JS 和 jQuery &ndash;&gt;-->
-<!--  <script src="./Javascript/jquery.min.js"></script>-->
-<!--  <script src="./Javascript/bootstrap.min.js"></script>-->
-<!--  &lt;!&ndash; 为按钮添加点击事件 &ndash;&gt;-->
-<!--  <script>-->
-<!--    $(document).ready(function(){-->
-<!--      $(".navbar-toggle").click(function(){-->
-<!--        $(".bs-navbar-collapse").toggleClass("in");-->
-<!--      });-->
-<!--    });-->
-<!--  </script>-->
-<!--</body>-->
+<!--<div class="container">-->
+<!--	<div class="row">-->
+<!--		<div class="col-md-12" role="main">-->
+<!--			<h2 id="statistical_information" class="page-header">数据统计</h2>-->
+<!--			<div class="row">-->
+<!--			  <div class="col-lg-12">-->
+<!--				&lt;!&ndash; 使用 Bootstrap 创建表格 &ndash;&gt;-->
+<!--				<table class="table">-->
+<!--				  <thead>-->
+<!--					<tr>-->
+<!--					  <th scope="col">内容</th>-->
+<!--					  <th scope="col">数值</th>-->
+<!--					</tr>-->
+<!--				  </thead>-->
+<!--				  <tbody id="tableBody">-->
+<!--					&lt;!&ndash; JavaScript 将动态插入表格内容 &ndash;&gt;-->
+<!--				  </tbody>-->
+<!--				</table>-->
+<!--			  </div>-->
+<!--			</div>-->
+<!--			&lt;!&ndash; 利用 Bootstrap 网格系统创建容器 &ndash;&gt;-->
+<!--			<div class="row">-->
+<!--			  <div class="col-lg-12">-->
+<!--				&lt;!&ndash; 设置 echarts 图表容器的大小 &ndash;&gt;-->
+<!--				<div id="echarts_bar" style="width: 100%; height: 500px;"></div>-->
+<!--			  </div>-->
+<!--			</div>-->
+<!--			<h2 id="publication" class="page-header">发表论文</h2>-->
+<!--			<div class="row">-->
+<!--				<div class="col-md-12">-->
+<!--					<ol class="papers-list" id="grants">-->
+<!--						<li>-->
+<!--							<b>Fangyu Liu</b>, Shizhong Yuan, Weimin Li*, Qun Xu, Xing Wu, Ke Han**, Jingchao Wang, Shang Miao. <u> Multi-task joint learning network based on adaptive patch pruning for Alzheimer's disease diagnosis and clinical score prediction</u>. <i><b> Biomedical Signal Processing and Control</b>, 2024</i>. (中科院 2 区, JCR 2 区, IF:5.1, <i><b>Accept</b></i>)[<a href="https://fangyuliu-2023.github.io/index.html#publications">Link</a>]-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							Jingchao Wang, Weimin Li*, Fangfang Liu, Zhenhai Wang, Alex Munyole Luvembe, Qun Jin, Quanke Pan, <b>Fangyu Liu</b>. <u> ConeE: Global and Local Context-enhanced Embedding for Inductive Knowledge Graph Completion</u>. <i><b> Expert Systems With Applications</b>, 2024</i>. (中科院 1 区TOP, JCR 1 区, IF:8.5)[<a href="https://www.sciencedirect.com/science/article/pii/S0957417423036205" target="_blank">Link</a>]-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							Hongli Cheng, Shizhong Yuan, Weimin Li*, Xiao Yu, <b>Fangyu Liu</b>, Xiao Liu, Tsigabu Teame Bezabih. <u> De-accumulated error collaborative learning framework for predicting Alzheimer’s disease progression</u>. <i><b> Biomedical Signal Processing and Control</b>, 2024</i>. (中科院 2 区, JCR 2 区, IF:5.1)[<a href="https://www.sciencedirect.com/science/article/pii/S1746809423012004" target="_blank">Link</a>]-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							Shang Miao, Qun Xu, Weimin Li*, Chao Yang**, Bin Sheng, <b>Fangyu Liu</b>, Tsigabu T. Bezabih, Xiao Yu. <u> MMTFN: Multi-modal Multi-scale transformer fusion network for Alzheimer’s disease diagnosis</u>. <i><b> International Journal of Imaging Systems and Technology</b>, 2024</i>. (中科院 4 区, JCR 2 区, IF:3.3)[<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/ima.22970" target="_blank">Link</a>]-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							<b>Fangyu Liu</b>, Shizhong Yuan, Weimin Li*, Qun Xu**, Bin Sheng. <u> Patch-based deep multi-modal learning framework for Alzheimer’s disease diagnosis using multi-view neuroimaging</u>. <i><b> Biomedical Signal Processing and Control</b>, 2023</i>. (中科院 2 区, JCR 2 区, IF:5.1)[<a href="https://www.sciencedirect.com/science/article/pii/S1746809422008540" target="_blank">Link</a>]-->
+<!--						</li>-->
+<!--&lt;!&ndash;						<li>&ndash;&gt;-->
+<!--&lt;!&ndash;							Jingchao Wang, Weimin Li*, Fangfang Liu, Zhenhai Wang, Alex Munyole Luvembe, Qun Jin, Quanke Pan, <b>Fangyu Liu</b>. <u> ConeE: Global and Local Context-enhanced Embedding for Inductive Knowledge Graph Completion</u>. <i><b> Expert Systems With Applications</b>, 2023</i>. (中科院 1 区, JCR 1 区, IF:8.5, <i><b>Accept</b></i>)[<a href="https://fangyuliu-2023.github.io/index.html#publications">Link</a>]&ndash;&gt;-->
+<!--&lt;!&ndash;						</li>&ndash;&gt;-->
+<!--					</ol>-->
+<!--                    <ol class="return-list" id="grants">-->
+<!--                        <li>-->
+<!--                            <b><a href="index.html#publications">返回个人主页...</a></b>-->
+<!--                        </li>-->
+<!--                    </ol>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
+
+<!--<footer class="footer">-->
+<!--	<div class="container">-->
+<!--		<p class="text-muted">Homepage Create:09/2023, Last Modified:04/2024, Copyright © Fangyu Liu 2023-2024</p>-->
+<!--	</div>-->
+<!--	<div class="color_wrapper"></div>-->
+<!--</footer>-->
+
+<!--    &lt;!&ndash; Bootstrap core JavaScript-->
+<!--    ================================================== &ndash;&gt;-->
+<!--    &lt;!&ndash; Placed at the end of the document so the pages load faster &ndash;&gt;-->
+<!--	<script src="./Javascript/jquery.min.js"></script>-->
+<!--    <script src="./Javascript/bootstrap.min.js"></script>-->
+<!--	<script src="./Javascript/echarts.js"></script>-->
+<!--	<script src="./Javascript/echarts.min.js"></script>-->
+<!--    &lt;!&ndash; IE10 viewport hack for Surface/desktop Windows 10 bug &ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="js/ie10-viewport-bug-workaround.js"></script>&ndash;&gt;-->
+<!--	&lt;!&ndash; 为按钮添加点击事件 &ndash;&gt;-->
+<!--	<script>-->
+<!--	$(document).ready(function(){-->
+<!--	  $(".navbar-toggle").click(function(){-->
+<!--		$(".bs-navbar-collapse").toggleClass("in");-->
+<!--	  });-->
+<!--	});-->
+<!--	</script>-->
+<!--    <script>-->
+<!--		fetch('./assets/citation_data.json')-->
+<!--			.then(response => response.json())-->
+<!--			.then(citation_data => {-->
+<!--				// console.log(citation_data);-->
+<!--				// 从 citation_data 中读取 years_citations 对象-->
+<!--				var citations_per_year_obj = citation_data["citations_per_year"];-->
+
+<!--				// 检查 years_citations_obj 是否为对象-->
+<!--				if (typeof citations_per_year_obj === "object") {-->
+<!--					// 使用 Object.keys() 和 Object.values() 读取键值对-->
+<!--					var years = Object.keys(citations_per_year_obj);-->
+<!--					var citations_per_year = Object.values(citations_per_year_obj);-->
+
+<!--					// 打印结果检查-->
+<!--					// console.log("Years:", years);-->
+<!--					// console.log("Citations per year:", citations_per_year);-->
+
+<!--					// 继续执行你的逻辑-->
+
+<!--					// 设置echarts图表-->
+<!--					var chartDom = document.getElementById("echarts_bar");-->
+<!--					var myChart = echarts.init(chartDom);-->
+<!--					var option;-->
+
+<!--					// option = {-->
+<!--					//   title: {-->
+<!--					//     text: ' Citations per year',-->
+<!--					// 	// subtext: ''-->
+<!--					//   },-->
+<!--					//   tooltip: {-->
+<!--					// 	trigger: 'axis',-->
+<!--					// 	axisPointer: {-->
+<!--					// 	  type: 'shadow'-->
+<!--					// 	}-->
+<!--					//   },-->
+<!--					//   grid: {-->
+<!--					// 	left: '3%',-->
+<!--					// 	right: '4%',-->
+<!--					// 	bottom: '3%',-->
+<!--					// 	containLabel: true-->
+<!--					//   },-->
+<!--					//   xAxis: [-->
+<!--					// 	{-->
+<!--					// 	  type: 'category',-->
+<!--					// 	  // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],-->
+<!--					// 	  data: years,-->
+<!--					// 	  axisTick: {-->
+<!--					// 		alignWithLabel: true-->
+<!--					// 	  }-->
+<!--					// 	}-->
+<!--					//   ],-->
+<!--					//   yAxis: [-->
+<!--					// 	{-->
+<!--					// 	  type: 'value'-->
+<!--					// 	}-->
+<!--					//   ],-->
+<!--					//   series: [-->
+<!--					// 	{-->
+<!--					// 	  name: 'Direct',-->
+<!--					// 	  type: 'bar',-->
+<!--					// 	  barWidth: '60%',-->
+<!--					// 	  // data: [10, 52, 200, 334, 390, 330, 220],-->
+<!--					// 	  data: citations_per_year-->
+<!--					// 	}-->
+<!--					//   ]-->
+<!--					// };-->
+<!--					//-->
+<!--					// option && myChart.setOption(option);-->
+
+<!--					// prettier-ignore-->
+<!--					// let dataAxis = ['2023', '击', '柱', '子', '或', '者', '两', '指', '在', '触', '屏', '上', '滑', '动', '能', '够', '自', '动', '缩', '放'];-->
+<!--					// prettier-ignore-->
+<!--					// let data = [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220];-->
+
+<!--					let yMax = citation_data["total_citations"];-->
+<!--					let dataShadow = [];-->
+<!--					for (let i = 0; i < citations_per_year.length; i++) {-->
+<!--					  dataShadow.push(yMax);-->
+<!--					}-->
+<!--					option = {-->
+<!--					  tooltip: {-->
+<!--						trigger: 'axis',-->
+<!--						axisPointer: {-->
+<!--						  type: 'shadow'-->
+<!--						}-->
+<!--					  },-->
+<!--					  title: {-->
+<!--						text: 'Citations per year',-->
+<!--						// subtext: ''-->
+<!--					  },-->
+<!--					  xAxis: {-->
+<!--						// data: ['2023', '击', '柱', '子', '或', '者', '两', '指', '在', '触', '屏', '上', '滑', '动', '能', '够', '自', '动', '缩', '放'],-->
+<!--						data: years,-->
+<!--						axisLabel: {-->
+<!--						  inside: true,-->
+<!--						  color: '#fff'-->
+<!--						},-->
+<!--						axisTick: {-->
+<!--						  show: false-->
+<!--						},-->
+<!--						axisLine: {-->
+<!--						  show: false-->
+<!--						},-->
+<!--						z: 10-->
+<!--					  },-->
+<!--					  yAxis: {-->
+<!--						axisLine: {-->
+<!--						  show: false-->
+<!--						},-->
+<!--						axisTick: {-->
+<!--						  show: false-->
+<!--						},-->
+<!--						axisLabel: {-->
+<!--						  color: '#999'-->
+<!--						}-->
+<!--					  },-->
+<!--					  dataZoom: [-->
+<!--						{-->
+<!--						  type: 'inside'-->
+<!--						}-->
+<!--					  ],-->
+<!--					  series: [-->
+<!--						{-->
+<!--						  type: 'bar',-->
+<!--						  showBackground: true,-->
+<!--						  itemStyle: {-->
+<!--							color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [-->
+<!--							  { offset: 0, color: '#83bff6' },-->
+<!--							  { offset: 0.5, color: '#188df0' },-->
+<!--							  { offset: 1, color: '#188df0' }-->
+<!--							])-->
+<!--						  },-->
+<!--						  emphasis: {-->
+<!--							itemStyle: {-->
+<!--							  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [-->
+<!--								{ offset: 0, color: '#2378f7' },-->
+<!--								{ offset: 0.7, color: '#2378f7' },-->
+<!--								{ offset: 1, color: '#83bff6' }-->
+<!--							  ])-->
+<!--							}-->
+<!--						  },-->
+<!--						  // data:[220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220]-->
+<!--						  data: citations_per_year-->
+<!--						}-->
+<!--					  ]-->
+<!--					};-->
+<!--					// Enable data zoom when user click bar.-->
+<!--					const zoomSize = 6;-->
+<!--					myChart.on('click', function (params) {-->
+<!--					  // console.log(years[Math.max(params.dataIndex - zoomSize / 2, 0)]);-->
+<!--					  myChart.dispatchAction({-->
+<!--						type: 'dataZoom',-->
+<!--						startValue: years[Math.max(params.dataIndex - zoomSize / 2, 0)],-->
+<!--						endValue:-->
+<!--						  years[Math.min(params.dataIndex + zoomSize / 2, citations_per_year.length - 1)]-->
+<!--					  });-->
+<!--					});-->
+
+<!--					option && myChart.setOption(option);-->
+
+<!--				} else {-->
+<!--					console.error("citations_per_year is not an object.");-->
+<!--				}-->
+
+<!--					// 创建一个包含论文标题和引用数量的字典-->
+<!--					var citations = {};-->
+
+<!--					// 遍历论文数据，将标题和引用数量存入字典-->
+<!--					citation_data.publications.forEach(function(publication) {-->
+<!--						citations[publication.title] = publication.citations;-->
+<!--					});-->
+
+<!--					// 获取所有论文列表项-->
+<!--					var paperItems = document.querySelectorAll(".papers-list li");-->
+
+<!--					// 遍历每个论文列表项-->
+<!--					paperItems.forEach(function(item) {-->
+<!--						var found = false;-->
+<!--						// 定义匹配阈值-->
+<!--						var words_threshold = citation_data['words_threshold'];-->
+<!--						// 遍历字典中的每个论文标题-->
+<!--						Object.keys(citations).forEach(function(title) {-->
+<!--							var titleWords = title.split(/\s+/);-->
+<!--							var matchedWords = 0;-->
+<!--							// 统计当前论文标题中与列表项文本内容匹配的单词数量-->
+<!--							titleWords.forEach(function(word) {-->
+<!--								if (item.textContent.includes(word)) {-->
+<!--									matchedWords++;-->
+<!--								}-->
+<!--							});-->
+<!--							// 计算匹配概率-->
+<!--							var matchProbability = matchedWords / titleWords.length;-->
+<!--							// 如果匹配概率达到阈值，则认为匹配成功-->
+<!--							if (matchProbability >= words_threshold) {-->
+<!--								var citationCount = citations[title];-->
+<!--								var citationText = "Cited by：" + citationCount;-->
+<!--								var citationElement = document.createElement("span");-->
+<!--								citationElement.textContent = citationText;-->
+<!--								citationElement.style.marginLeft = "10px"; // 设置引用数量的样式-->
+<!--								item.appendChild(citationElement);-->
+<!--								// 匹配成功后跳出循环，避免重复添加引用数量信息-->
+<!--								found = true;-->
+<!--								return;-->
+<!--							}-->
+<!--							// // 如果论文标题存在于当前列表项中-->
+<!--							// if (item.textContent.includes(title)) {-->
+<!--							// 	var citationCount = citations[title];-->
+<!--							// 	var citationText = "Cited by：" + citationCount;-->
+<!--							// 	var citationElement = document.createElement("span");-->
+<!--							// 	citationElement.textContent = citationText;-->
+<!--							// 	citationElement.style.marginLeft = "10px"; // 设置引用数量的样式-->
+<!--							// 	item.appendChild(citationElement);-->
+<!--							// 	found = true;-->
+<!--							// }-->
+<!--						});-->
+<!--						// 如果没有找到对应的论文标题，则引用数量设为0-->
+<!--						if (!found) {-->
+<!--							var citationText = "Cited by：0";-->
+<!--							var citationElement = document.createElement("span");-->
+<!--							citationElement.textContent = citationText;-->
+<!--							citationElement.style.marginLeft = "10px"; // 设置引用数量的样式-->
+<!--							item.appendChild(citationElement);-->
+<!--						}-->
+<!--					});-->
+
+<!--					// 设置表格-->
+<!--					// JavaScript 动态生成表格内容-->
+<!--					var tableBody = document.getElementById("tableBody");-->
+<!--					var data_statistics = [-->
+<!--					{ index: "Publications", value: citation_data['num_papers'] },-->
+<!--					{ index: "Citations", value: citation_data['total_citations'] },-->
+<!--					{ index: "h-index", value: citation_data['h'] },-->
+<!--					{ index: "i10-index", value: citation_data['i10'] },-->
+<!--					// 可以根据需要添加更多的数据-->
+<!--					];-->
+
+<!--					data_statistics.forEach(function(statistic) {-->
+<!--					var row = document.createElement("tr");-->
+<!--					row.innerHTML = "<td>" + statistic.index + "</td><td>" + statistic.value + "</td>";-->
+<!--					tableBody.appendChild(row);-->
+<!--					});-->
+<!--				})-->
+<!--			.catch(error => {-->
+<!--				console.error('Error:', error);-->
+<!--			});-->
+<!--    </script>-->
+<!--  </body>-->
+
 <!--</html>-->
-
 
