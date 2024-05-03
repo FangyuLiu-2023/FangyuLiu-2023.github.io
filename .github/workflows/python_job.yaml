@@ -3,6 +3,7 @@ name: Scheduled Python Job
 on:
   #schedule:
     #- cron: '*/1 * * * *'  # 每分钟触发一次
+  #手动触发
   workflow_dispatch:
 
 jobs:
@@ -30,7 +31,7 @@ jobs:
         run: |
           git config --global user.email 905805357@qq.com
           git config --global user.name autoSubmissionRobot
-          git add citation_data.json
+          git add ./assets/citation_data.json
           git commit -m"action:`date`"
           git pull --rebase
 
