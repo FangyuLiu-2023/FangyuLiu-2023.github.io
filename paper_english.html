@@ -145,7 +145,7 @@ date:April 2021
 			<h2 id="publications" class="page-header">All Publications</h2>
 			<div class="row">
 				<div class="col-md-12">
-					<ol class="papers-list" id="grants">
+					<ol class="papers-list" id="grants0">
 						<li>
 							Ruijie Shao, Hao Wang, <b>Fangyu Liu</b>, Fangmin Sun*. <u> Gait Recognition Method Based on Wearable Sensor Information Fusion</u>. <i><b> The 7th International Conference on Biological Information and Biomedical Engineering</b>, 2024</i>. (BIBE 2024, <i><b>Accept</b></i>)[<a href="https://fangyuliu-2023.github.io/paper_english.html#publications">Link</a>]
 						</li>
@@ -156,7 +156,7 @@ date:April 2021
 							<b>Fangyu Liu</b>, Shizhong Yuan, Weimin Li*, Qun Xu, Xing Wu, Ke Han*, Jingchao Wang, Shang Miao. <u> Multi-task joint learning network based on adaptive patch pruning for Alzheimer's disease diagnosis and clinical score prediction</u>. <i><b> Biomedical Signal Processing and Control</b>, 2024</i>. (Q2 of CAS, Q1 of JCR, IF:4.9)[<a href="https://doi.org/10.1016/j.bspc.2024.106398" target="_blank">Link</a>]
 						</li>
 						<li>
-							Jingchao Wang, Weimin Li*, Fangfang Liu, Zhenhai Wang, Alex Munyole Luvembe, Qun Jin, Quanke Pan, <b>Fangyu Liu</b>. <u> ConeE: Global and Local Context-enhanced Embedding for Inductive Knowledge Graph Completion</u>. <i><b> Expert Systems With Applications</b>, 2024</i>. (CCF-C, Q1 of CAS, Q1 of JCR, IF:7.5)[<a href="https://doi.org/10.1016/j.eswa.2023.123116" target="_blank">Link</a>]
+							Jingchao Wang, Weimin Li*, Fangfang Liu, Zhenhai Wang, Alex Munyole Luvembe, Qun Jin, Quanke Pan, <b>Fangyu Liu</b>. <u> ConeE: Global and local context-enhanced embedding for inductive knowledge graph completion</u>. <i><b> Expert Systems With Applications</b>, 2024</i>. (CCF-C, Q1 of CAS, Q1 of JCR, IF:7.5)[<a href="https://doi.org/10.1016/j.eswa.2023.123116" target="_blank">Link</a>]
 						</li>
 						<li>
 							Hongli Cheng, Shizhong Yuan, Weimin Li*, Xiao Yu, <b>Fangyu Liu</b>, Xiao Liu, Tsigabu Teame Bezabih. <u> De-accumulated error collaborative learning framework for predicting Alzheimer's disease progression</u>. <i><b> Biomedical Signal Processing and Control</b>, 2024</i>. (Q2 of CAS, Q1 of JCR, IF:4.9)[<a href="https://doi.org/10.1016/j.bspc.2023.105767" target="_blank">Link</a>]
@@ -171,7 +171,7 @@ date:April 2021
 <!--							Jingchao Wang, Weimin Li*, Fangfang Liu, Zhenhai Wang, Alex Munyole Luvembe, Qun Jin, Quanke Pan, <b>Fangyu Liu</b>. <u> ConeE: Global and Local Context-enhanced Embedding for Inductive Knowledge Graph Completion</u>. <i><b> Expert Systems With Applications</b>, 2023</i>. (Q1 of CAS, Q1 of JCR, IF:8.5, <i><b>Accept</b></i>)[<a href="https://fangyuliu-2023.github.io/paper_english.html#publications">Link</a>]-->
 <!--						</li>-->
 					</ol>
-                    <ol class="return-list" id="grants">
+                    <ol class="return-list" id="grants1">
                         <li>
                             <b><a href="index_english.html#publications">Return to personal homepage...</a></b>
                         </li>
@@ -211,7 +211,7 @@ date:April 2021
 		fetch('./assets/citation_data.json')
 			.then(response => response.json())
 			.then(citation_data => {
-				var words_threshold = 0.6
+				var words_threshold = 0.7
 				// 检查 citation_data 是否存在以及是否包含 years_citations
 				if (citation_data) {
 				// 从 citation_data 中读取 years_citations 对象
@@ -385,23 +385,53 @@ date:April 2021
 					// 获取所有论文列表项
 					var paperItems = document.querySelectorAll(".papers-list li");
 
+					// 将 NodeList 转换为数组并反转
+        			var paperItemsArray = Array.from(paperItems).reverse();
+
 					// 遍历每个论文列表项
-					paperItems.forEach(function(item) {
+					// paperItemsArray.forEach(function(item) {
+					for (var i = 0; i < paperItemsArray.length; i++) {
+						var item = paperItemsArray[i];
 						var found = false;
+						// 获取 <u> 元素
+        				var uElement = item.querySelector('u');
+						// 获取 <u> 元素中的文本内容
+        				var uText = uElement.textContent.trim();
+        				//正则表达式 /\s+/：匹配一个或多个空白字符，包括空格、制表符、换行符等。
+						//分割方式：split(/\s+/) 将字符串 title 按照一个或多个连续的空白字符进行分割。
+        				var elementTitleWords = uText.split(/\s+/);
+        				// console.log(elementTitleWords);
 						// 定义匹配阈值
 						// var words_threshold = citation_data['words_threshold'];
 						// 遍历字典中的每个论文标题
-						Object.keys(citations).forEach(function(title) {
+						// Object.keys(citations).forEach(function(title) {
+						// 获取字典中的所有键
+						var titleKeys = Object.keys(citations);
+						// 使用 for 循环遍历这些键
+						for (var k = 0; k < titleKeys.length; k++) {
+							var title = titleKeys[k]; // 当前的键（论文标题）
 							var titleWords = title.split(/\s+/);
+							// console.log(item);
+							// console.log(elementTitleWords);
+							// console.log(titleWords);
 							var matchedWords = 0;
 							// 统计当前论文标题中与列表项文本内容匹配的单词数量
-							titleWords.forEach(function(word) {
-								if (item.textContent.includes(word)) {
+							// titleWords.forEach(function(word) {
+							// 	if (item.textContent.includes(word)) {
+							// 		matchedWords++;
+							// 	}
+							// });
+							// 获取较小的长度
+        					var smallerLength = Math.min(titleWords.length, elementTitleWords.length);
+        					// 从单词包含在内的判断 -》 改为逐词串相等匹配，尽量与谷歌学术论文标题给出一致
+							for (var t = 0; t < smallerLength; t++) {
+								if (titleWords[t] == elementTitleWords[t]) {
 									matchedWords++;
 								}
-							});
+							}
 							// 计算匹配概率
-							var matchProbability = matchedWords / titleWords.length;
+							var matchProbability = matchedWords / smallerLength;
+							// console.log(matchProbability);
 							// 如果匹配概率达到阈值，则认为匹配成功
 							if (matchProbability >= words_threshold) {
 								var citationCount = citations[title];
@@ -410,9 +440,11 @@ date:April 2021
 								citationElement.textContent = citationText;
 								citationElement.style.marginLeft = "10px"; // 设置引用数量的样式
 								item.appendChild(citationElement);
+								// 移除指定的键值对
+								delete citations[title];
 								// 匹配成功后跳出循环，避免重复添加引用数量信息
 								found = true;
-								return;
+								break;
 							}
 							// // 如果论文标题存在于当前列表项中
 							// if (item.textContent.includes(title)) {
@@ -424,7 +456,8 @@ date:April 2021
 							// 	item.appendChild(citationElement);
 							// 	found = true;
 							// }
-						});
+						// });
+						}
 						// 如果没有找到对应的论文标题，则引用数量设为0
 						if (!found) {
 							var citationText = "Cited by：0";
@@ -433,7 +466,8 @@ date:April 2021
 							citationElement.style.marginLeft = "10px"; // 设置引用数量的样式
 							item.appendChild(citationElement);
 						}
-					});
+					// });
+					}
 
 					// 设置表格
 					// JavaScript 动态生成表格内容
