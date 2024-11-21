@@ -33,9 +33,9 @@ layui.use(['carousel', 'form'], function(){
   });
   //图片轮播
   carousel.render({
-    elem: '#test10'
-    ,width: '1000px'
-    ,height: '600px'
+    elem: '#our_carousel'
+    ,width: '1024px'
+    ,height: '576px'
     ,interval: 5000
   });
 
