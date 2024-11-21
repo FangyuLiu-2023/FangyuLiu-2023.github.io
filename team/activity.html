@@ -54,18 +54,6 @@
         max-height: none; /* 移除最大高度限制 */
         float: none; /* 不浮动，使其在下方显示 */
       }
-      /* 修改二级菜单的交互方式 */
-      .layui-nav-child {
-        display: none;
-      }
-
-      .layui-nav-item.layui-nav-itemed .layui-nav-child {
-        display: block;
-      }
-
-      .layui-nav-item > a {
-        cursor: pointer;
-      }
     }
   </style>
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
@@ -386,18 +374,6 @@
     }
   }
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var navItems = document.querySelectorAll('.layui-nav-item');
-  navItems.forEach(function(navItem) {
-    navItem.addEventListener('click', function(event) {
-      if (window.innerWidth <= 768) {
-        event.preventDefault();
-        navItem.classList.toggle('layui-nav-itemed');
-      }
-    });
-  });
-});
-</script>
+
 </body>
 </html>
