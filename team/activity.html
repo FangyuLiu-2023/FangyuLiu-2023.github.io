@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" href="../icon/team.png">
   <style>
     /* 响应式样式 */
-    @media (max-width: 999px) {
+    @media (max-width: 768px) {
       /* 在这里添加适应小屏幕的样式 */
       .container {
         display: flex;
@@ -82,14 +82,24 @@
 <!--      <li class="layui-nav-item"><a href="#join">申请加入团队</a></li>-->
       <li class="layui-nav-item"><a href="activity_english.html">English Version</a></li>
     </ul>
+<!--    &lt;!&ndash;活动轮播图&ndash;&gt;-->
+<!--    <div class="layui-carousel" id="our_carousel" style="margin: 0 auto; max-width: 100%; max-height: 100%; overflow: visible;">-->
+<!--        <div carousel-item="">-->
+<!--            <div><img class="my_carousel" src="carouselFigure/activities1.jpg" style="width: 100%; max-width: 1024px; height: 100%; max-height: 768px;" onclick="javascript:location.href='#img1'"></div>-->
+<!--&lt;!&ndash;            <div><img class="my_carousel" src="carouselFigure/activities1_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img1'"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div><img class="my_carousel" src="carouselFigure/activities2_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img2'"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div><img class="my_carousel" src="carouselFigure/activities3_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img3'"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div><img class="my_carousel" src="carouselFigure/activities4_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img4'"></div>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
     <!--活动轮播图-->
-    <div class="layui-carousel" id="our_carousel" style="margin: 0 auto; max-width: 100%; max-height: 100%; overflow: visible;">
+    <div class="layui-carousel" id="our_carousel" style="margin: 0 auto; max-width: 100%; overflow: visible;">
         <div carousel-item="">
-            <div><img class="my_carousel" src="carouselFigure/activities1.jpg" style="width: 100%; max-width: 1024px; height: 100%; max-height: 768px;" onclick="javascript:location.href='#img1'"></div>
-<!--            <div><img class="my_carousel" src="carouselFigure/activities1_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img1'"></div>-->
-<!--            <div><img class="my_carousel" src="carouselFigure/activities2_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img2'"></div>-->
-<!--            <div><img class="my_carousel" src="carouselFigure/activities3_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img3'"></div>-->
-<!--            <div><img class="my_carousel" src="carouselFigure/activities4_test.jpg" style="width: 100%; max-width: 1000px; height: 100%; max-height: 600px;" onclick="javascript:location.href='#img4'"></div>-->
+            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities1.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>
+            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities1_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>
+            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities2_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>
+            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities3_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>
+            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities4_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>
         </div>
     </div>
     <!--块引用-->
@@ -373,6 +383,49 @@
       }
     }
   }
+    //双重监听事件，1、图片尺寸改变，父元素，祖父元素随着图片高度改变而改变高度；2、祖父元素的class属性随着轮播图切换而改变，监听到class属性发生改变后重启1号监听事件
+    window.onload = function() {
+        const carouselFatherItem = document.querySelector('.layui-carousel');
+        let carouselItem = document.querySelector('.layui-this'); // 初始的 .layui-this 元素
+        let img = document.querySelector('.layui-this').querySelector('img');
+
+        // 创建 ResizeObserver 来监听图片尺寸变化
+        const resizeObserver = new ResizeObserver(() => {
+            carouselItem = document.querySelector('.layui-this'); // 初始的 .layui-this 元素
+            img = document.querySelector('.layui-this').querySelector('img');
+            // 当图片尺寸变化时，调整父元素和祖父元素的高度
+            carouselFatherItem.style.height = img.height + 'px';
+            carouselItem.style.height = img.height + 'px';
+        });
+
+        // 开始监听图片元素
+        resizeObserver.observe(img);
+
+        // 创建 MutationObserver 来监听 .layui-this 元素的 class 属性变化
+        const mutationObserver = new MutationObserver(() => {
+            // 当 .layui-this 的 class 属性变化时，重新查找新的 .layui-this 元素
+            const newCarouselItem = document.querySelector('.layui-this');
+            if (newCarouselItem && newCarouselItem !== carouselItem) {
+                // 如果 .layui-this 元素已经变化，更新 carouselItem 引用
+                carouselItem = document.querySelector('.layui-this');
+                // 重新查找图片并开始监听新的图片大小变化
+                const newImg = document.querySelector('.layui-this').querySelector('img');
+                if (newImg) {
+                    // 停止之前的监听
+                    resizeObserver.disconnect();
+                    // 重新开始监听新的图片
+                    resizeObserver.observe(newImg);
+                }
+            }
+        });
+
+        // 监听 carouselFatherItem 或其父元素的 class 变化
+        mutationObserver.observe(carouselFatherItem, {
+            attributes: true,         // 监听属性变化
+            attributeFilter: ['class'], // 仅监听 class 属性变化
+            subtree: true             // 监听整个树的属性变化
+        });
+    };
 </script>
 
 </body>

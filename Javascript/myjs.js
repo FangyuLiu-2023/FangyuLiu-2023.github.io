@@ -13,35 +13,38 @@ layui.use(['carousel', 'form'], function(){
   var carousel = layui.carousel
   ,form = layui.form;
 
-  //常规轮播
-  carousel.render({
-    elem: '#test1'
-    ,arrow: 'always'
-  });
+  // //常规轮播
+  // carousel.render({
+  //   elem: '#test1'
+  //   ,arrow: 'always'
+  // });
+  //
+  // //改变下时间间隔、动画类型、高度
+  // carousel.render({
+  //   elem: '#test2'
+  //   ,interval: 1800
+  //   ,anim: 'fade'
+  //   ,height: '120px'
+  // });
+  //
+  // //设定各种参数
+  // var ins3 = carousel.render({
+  //   elem: '#test3'
+  // }
 
-  //改变下时间间隔、动画类型、高度
-  carousel.render({
-    elem: '#test2'
-    ,interval: 1800
-    ,anim: 'fade'
-    ,height: '120px'
-  });
-
-  //设定各种参数
-  var ins3 = carousel.render({
-    elem: '#test3'
-  });
   //图片轮播
-  carousel.render({
+  var ins = carousel.render({
     elem: '#our_carousel'
     ,width: '1024px'
     ,height: '576px'
     ,interval: 5000
+    ,autoplay: true // 确保开启自动播放
   });
 
   //事件
-  carousel.on('change(test4)', function(res){
-    console.log(res)
+  carousel.on('change(our_carousel)', function(res){
+    // console.log(res);  // 你可以在这里查看轮播图切换时的事件数据
+    ins.reload({ autoplay: true });  // 确保切换时自动播放继续
   });
 
   var $ = layui.$, active = {
@@ -52,13 +55,13 @@ layui.use(['carousel', 'form'], function(){
 
       othis.css('background-color', '#5FB878').siblings().removeAttr('style');
       options[key] = othis.data('value');
-      ins3.reload(options);
+      ins.reload(options);
     }
   };
 
   //监听开关
   form.on('switch(autoplay)', function(){
-    ins3.reload({
+    ins.reload({
       autoplay: this.checked
     });
   });
@@ -69,14 +72,14 @@ layui.use(['carousel', 'form'], function(){
     if(!/^\d+$/.test(value)) return;
 
     options[this.name] = value;
-    ins3.reload(options);
+    ins.reload(options);
   });
 
-  //其它示例
-  $('.demoTest .layui-btn').on('click', function(){
-    var othis = $(this), type = othis.data('type');
-    active[type] ? active[type].call(this, othis) : '';
-  });
+  // //其它示例
+  // $('.demoTest .layui-btn').on('click', function(){
+  //   var othis = $(this), type = othis.data('type');
+  //   active[type] ? active[type].call(this, othis) : '';
+  // });
 });
 //折叠面板
 layui.use(['dropdown', 'util', 'layer'], function(){
