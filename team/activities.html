@@ -77,20 +77,7 @@
 <!--            <div class="layui-collapse" lay-accordion="">-->
 <!--              <div class="layui-colla-item" style="text-align: left;">-->
 <!--                <h2 class="layui-colla-title">活动一</h2>-->
-<!--                <div class="layui-colla-content" index="0" flag="close">&lt;!&ndash;index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态&ndash;&gt;-->
-<!--                  <p>2019.10.11~2019.10.13：活动内容。</p>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">-->
-<!--          <div class="layui-panel" style="text-align: center;">-->
-<!--            <img src="activities/activities2_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img2" onclick="fold('1')">&lt;!&ndash;点击事件传入参数代表点击的第几个图&ndash;&gt;-->
-<!--            <div class="layui-collapse" lay-accordion="">-->
-<!--              <div class="layui-colla-item" style="text-align: left;">-->
-<!--                <h2 class="layui-colla-title">活动二</h2>-->
-<!--                <div class="layui-colla-content" index="1" flag="close">&lt;!&ndash;index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态&ndash;&gt;-->
+<!--                <div class="layui-colla-content layui-show" index="0" flag="open">&lt;!&ndash;index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态&ndash;&gt;-->
 <!--                  <p>2019.10.11~2019.10.13：活动内容。</p>-->
 <!--                </div>-->
 <!--              </div>-->
@@ -99,12 +86,25 @@
 <!--        </div>-->
         <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
           <div class="layui-panel" style="text-align: center;">
+            <img src="activities/activities2.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img2" onclick="fold('2')"><!--点击事件传入参数代表点击的第几个图-->
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item" style="text-align: left;">
+                <h2 class="layui-colla-title">ACM-BCB-2024会议</h2>
+                <div class="layui-colla-content layui-show" index="2" flag="open"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
+                  <p>2024.11.24：于中国深圳担任ACM-BCB-2024会议志愿者。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
+          <div class="layui-panel" style="text-align: center;">
             <img src="activities/activities1.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img1" onclick="fold('1')"><!--点击事件传入参数代表点击的第几个图-->
             <div class="layui-collapse" lay-accordion="">
               <div class="layui-colla-item" style="text-align: left;">
-                <h2 class="layui-colla-title">MDBS-BHE2024会议</h2>
+                <h2 class="layui-colla-title">MDBS-BHE-2024会议</h2>
                 <div class="layui-colla-content layui-show" index="1" flag="open"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>2024.11.20：于中国东莞参加MDBS-BHE2024会议。</p>
+                  <p>2024.11.20：于中国东莞参加MDBS-BHE-2024会议。</p>
                 </div>
               </div>
             </div>
