@@ -95,9 +95,9 @@
     <!--活动轮播图-->
     <div class="layui-carousel" id="our_carousel" style="margin: 0 auto; max-width: 100%; overflow: visible;">
         <div carousel-item="">
+            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities3.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img3'"></div>
             <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities2.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img2'"></div>
             <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities1.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>
-<!--            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities2_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>-->
 <!--            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities3_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>-->
 <!--            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities4_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>-->
         </div>
@@ -114,19 +114,19 @@
     </fieldset>
     <div class="layui-bg-gray" style="padding: 30px;">
       <div class="layui-row layui-col-space15"><!--一行放置三个活动的图-->
-<!--        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">-->
-<!--          <div class="layui-panel" style="text-align: center;">-->
-<!--            <img src="activities/activities1_test.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img1" onclick="fold('0')">&lt;!&ndash;点击事件传入参数代表点击的第几个图&ndash;&gt;-->
-<!--            <div class="layui-collapse" lay-accordion="">-->
-<!--              <div class="layui-colla-item" style="text-align: left;">-->
-<!--                <h2 class="layui-colla-title">活动一</h2>-->
-<!--                <div class="layui-colla-content layui-show" index="0" flag="open">&lt;!&ndash;index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态&ndash;&gt;-->
-<!--                  <p>2019.10.11~2019.10.13：活动内容。</p>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
+        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
+          <div class="layui-panel" style="text-align: center;">
+            <img src="activities/activities3.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img3" onclick="fold('3')"><!--点击事件传入参数代表点击的第几个图-->
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item" style="text-align: left;">
+                <h2 class="layui-colla-title">ICSTPA 2024会议</h2>
+                <div class="layui-colla-content layui-show" index="3" flag="open"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
+                  <p>2024.12.14：于中国广州参加ISTPA 2024会议并展示墙报。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
           <div class="layui-panel" style="text-align: center;">
             <img src="activities/activities2.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img2" onclick="fold('2')"><!--点击事件传入参数代表点击的第几个图-->
