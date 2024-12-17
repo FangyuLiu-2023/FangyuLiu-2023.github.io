@@ -73,8 +73,8 @@
         <li><a href="#activity">参与活动</a></li>
 		<li><a href="#award">所获奖励</a></li>
 		  -->
-		<li><a href="index_english.html">English Version</a></li>
 		<li><a href="#award">荣誉奖项</a></li>
+		<li><a href="index_english.html">English Version</a></li>
       </ul>
     </nav>
   </div>
@@ -392,11 +392,27 @@
 <!--    <script src="js/ie10-viewport-bug-workaround.js"></script>-->
 	<!-- 为按钮添加点击事件 -->
 	<script>
-	$(document).ready(function(){
-	  $(".navbar-toggle").click(function(){
-		$(".bs-navbar-collapse").toggleClass("in");
-	  });
-	});
+		$(document).ready(function(){
+		  // 监听窗口宽度变化
+		  $(window).resize(function() {
+			if ($(window).width() < 768) { // 假设小屏的阈值为768px
+			  // 先移除之前的事件监听器，预防尺寸变化重复绑定监听事件
+			  $(".navbar-toggle").off('click');
+			  $('.navbar-collapse a').off('click');
+
+			  // 监听导航栏按钮的点击事件
+			  $(".navbar-toggle").click(function(){
+				$(".bs-navbar-collapse").toggleClass("in");
+				$(this).toggleClass("collapsed"); // 切换按钮的collapsed类
+			  });
+
+			  // 监听导航栏链接的点击事件
+			  $('.navbar-collapse a').on('click', function () {
+				  $(".navbar-toggle").click(); // 触发导航栏按钮的点击事件，使导航栏收缩
+			  });
+			}
+		  }).trigger('resize'); // 初始触发一次resize事件以应用事件监听器
+		});
 	</script>
   </body>
 

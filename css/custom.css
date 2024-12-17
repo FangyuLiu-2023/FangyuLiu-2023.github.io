@@ -160,14 +160,35 @@ code {
 	.bs-docs-nav .navbar-toggle .icon-bar {
   		background-color: #1B58B8;
 	}
-  .bs-docs-nav .navbar-header .navbar-toggle {
+    .bs-docs-nav .navbar-header .navbar-toggle {
     border-color: #1B58B8;
-  }
-  .navbar-nav {
+    }
+    .navbar-nav {
 
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 
-  }
+    }
+    /*增加导航栏最大高度从340+80=420*/
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+      max-height: 420px;/*一条子导航栏40px*/
+    }
+
+    /*导航栏button展开状态时，变成叉号图标*/
+    /*导航栏button最上的条*/
+    .navbar-toggle:not(.collapsed) .icon-bar:nth-child(2) {
+      transform: rotate(45deg) translate(4px, 5px);
+      /*opacity: 0;*/
+    }
+    /*导航栏button中间的条*/
+    .navbar-toggle:not(.collapsed) .icon-bar:nth-child(3) {
+      /*transform: rotate(45deg) translate(0px, 0px);*/
+      opacity: 0;
+    }
+    /*导航栏button最下的条*/
+    .navbar-toggle:not(.collapsed) .icon-bar:nth-child(4) {
+      transform: rotate(-45deg) translate(3px, -5px);
+      /*opacity: 0;*/
+    }
 
 }
 
