@@ -49,22 +49,21 @@ def update_json():
             if int(paper['citations']) >= 10:
                 i10 = i10 + 1
 
-        h = 0
-        un_find = False
-        for i in range(len(citation_data['publications'])):
-            if un_find == True:
-                break
-            count = 0
-            for paper in citation_data['publications']:
-                if int(paper['citations']) >= h:
-                    count = count + 1
-            if count > h:
-                h = h + 1
+        # 根据引用次数对论文进行排序
+        sorted_publications = sorted(citation_data['publications'], key=lambda x: int(x['citations']), reverse=True)
+
+        # 初始化h指数
+        h_index = 0
+
+        # 遍历排序后的论文列表
+        for i, paper in enumerate(sorted_publications):
+            if int(paper['citations']) >= h_index + 1:
+                h_index += 1
             else:
-                un_find = True
+                break
 
         citation_data['num_papers'] = len(citation_data['publications'])
-        citation_data['h'] = h
+        citation_data['h'] = h_index
         citation_data['i10'] = i10
 
         json_str = json.dumps(citation_data)
