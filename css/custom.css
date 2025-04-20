@@ -273,6 +273,67 @@ ol { padding-left:20px; }
   width: 40px;
   text-align: right;
 }
+/*更改近期论文排版，图摘要，作者论文题目等信息，论文摘要*/
+.papers-container {
+  margin-top: 20px;
+  }
+  .paper-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .paper-image {
+  flex: 0 0 300px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  }
+  .paper-image img {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  }
+  .paper-info {
+  flex: 1;
+  min-width: 300px;
+  }
+  .paper-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: bold;
+  }
+  .paper-authors {
+  margin-bottom: 8px;
+  }
+  .paper-authors .highlight {
+  font-weight: bold;
+  }
+  .paper-journal {
+  font-style: italic;
+  margin-bottom: 8px;
+  }
+  .paper-extra {
+  color: #666;
+  margin-bottom: 8px;
+  }
+  .paper-links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #3498db;
+  }
+  .paper-links a:hover {
+  text-decoration: underline;
+  }
+  .paper-abstract {
+  margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-left: 3px solid #2c3e50;
+  }
 
 @media (max-width: 400px) { 
 	a.custom-navbar-brand{
