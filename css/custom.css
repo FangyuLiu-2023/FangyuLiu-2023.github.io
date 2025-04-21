@@ -210,6 +210,8 @@ ol { padding-left:20px; }
 .research-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/research.png");background-position: left top;background-size: 20px 23px;background-repeat: no-repeat;}
 .education-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/education.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .work-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/profession.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
+.work-list-1 li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/CNNC.jpg");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
+.work-list-2 li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/BGI.jpg");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .experiences-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/experiences.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .award-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/award.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
 .editor-list li{ margin-bottom:10px;display: block;padding-left: 25px;background-image: url("../icon/editor2.png");background-position: left top;background-size: 20px 20px;background-repeat: no-repeat;}
