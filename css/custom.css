@@ -199,6 +199,14 @@ code {
   }
 }
 
+/* 针对个人头像小屏手机端展示的调整 */
+@media (max-width: 991px) {  /* 针对手机屏幕 */
+  .aboutme-wraper .img-circle {
+    max-width: 120px !important;  /* 手机端缩小图片 */
+    margin-top: 10px !important;  /* 调整上边距 */
+  }
+}
+
 .sub-header{
   margin-top: 0px;
 }
