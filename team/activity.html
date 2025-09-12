@@ -95,10 +95,12 @@
     <!--活动轮播图-->
     <div class="layui-carousel" id="our_carousel" style="margin: 0 auto; max-width: 100%; overflow: visible;">
         <div carousel-item="">
+            <div class="layui-this" style="display: flex; justify-content: center; align-items: center;">
+              <img class="my_carousel" src="carouselFigure/activities4.jpg" style="width: auto; height: 100%; max-width: 100%;" onclick="javascript:location.href='#img4'">
+            </div>
             <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities3.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img3'"></div>
             <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities2.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img2'"></div>
             <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities1.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>
-<!--            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities3_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>-->
 <!--            <div class="layui-this"><img class="my_carousel" src="carouselFigure/activities4_test.jpg" style="width: 100%; height: auto;" onclick="javascript:location.href='#img1'"></div>-->
         </div>
     </div>
@@ -113,7 +115,50 @@
         <legend>近期活动</legend>
     </fieldset>
     <div class="layui-bg-gray" style="padding: 30px;">
+
       <div class="layui-row layui-col-space15"><!--一行放置三个活动的图-->
+        <!-- <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
+          <div class="layui-panel" style="text-align: center;">
+            <img src="activities/activities3.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img3" onclick="fold('3')">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item" style="text-align: left;">
+                <h2 class="layui-colla-title">ICSTPA 2024会议</h2>
+                <div class="layui-colla-content layui-show" index="3" flag="open">
+                  <p>2024.12.14：于中国广州参加 ICSTPA 2024会议并展示墙报。[<a href="../team/activities/Poster2.pdf" target="_blank" style="color: blue;">墙报</a>]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
+          <div class="layui-panel" style="text-align: center;">
+            <img src="activities/activities2.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img2" onclick="fold('2')">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item" style="text-align: left;">
+                <h2 class="layui-colla-title">ACM-BCB-2024会议</h2>
+                <div class="layui-colla-content layui-show" index="2" flag="open">
+                  <p>2024.11.24：于中国深圳担任 ACM-BCB-2024会议志愿者。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
+          <div class="layui-panel" style="text-align: center;">
+            <img src="activities/activities4.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: contain;" id="img4" onclick="fold('4')">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item" style="text-align: left;">
+                <h2 class="layui-colla-title">IJCB 2025会议</h2>
+                <div class="layui-colla-content layui-show" index="4" flag="open">
+                  <p>2025.09.11：于日本大阪参加 IJCB 2025会议。[<a href="../team/activities/Poster3.pdf" target="_blank" style="color: blue;">墙报</a>]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="layui-row layui-col-space15" style="margin-top: 30px;"><!--一行放置三个活动的图-->
         <div class="layui-col-md6" style="width: 100%; max-width: 365px; height: 100%; max-height:400px; float: left;">
           <div class="layui-panel" style="text-align: center;">
             <img src="activities/activities3.jpg" style="width: 100%; max-width: 385px; height: 100%; max-height: 300px; object-fit: fill;" id="img3" onclick="fold('3')"><!--点击事件传入参数代表点击的第几个图-->
@@ -121,7 +166,7 @@
               <div class="layui-colla-item" style="text-align: left;">
                 <h2 class="layui-colla-title">ICSTPA 2024会议</h2>
                 <div class="layui-colla-content layui-show" index="3" flag="open"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>2024.12.14：于中国广州参加ICSTPA 2024会议并展示墙报。[<a href="../team/activities/Poster2.pdf" target="_blank" style="color: blue;">墙报</a>]</p>
+                  <p>2024.12.14：于中国广州参加 ICSTPA 2024会议并展示墙报。[<a href="../team/activities/Poster2.pdf" target="_blank" style="color: blue;">墙报</a>]</p>
                 </div>
               </div>
             </div>
@@ -134,7 +179,7 @@
               <div class="layui-colla-item" style="text-align: left;">
                 <h2 class="layui-colla-title">ACM-BCB-2024会议</h2>
                 <div class="layui-colla-content layui-show" index="2" flag="open"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>2024.11.24：于中国深圳担任ACM-BCB-2024会议志愿者。</p>
+                  <p>2024.11.24：于中国深圳担任 ACM-BCB-2024会议志愿者。</p>
                 </div>
               </div>
             </div>
@@ -147,7 +192,7 @@
               <div class="layui-colla-item" style="text-align: left;">
                 <h2 class="layui-colla-title">MDBS-BHE-2024会议</h2>
                 <div class="layui-colla-content layui-show" index="1" flag="open"><!--index逐个需要顺延序号，图片点击事件中用到代表需要打开哪个折叠面板，flag是状态码，是否为打开状态-->
-                  <p>2024.11.20：于中国东莞参加MDBS-BHE-2024会议。</p>
+                  <p>2024.11.20：于中国东莞参加 MDBS-BHE-2024会议。</p>
                 </div>
               </div>
             </div>
