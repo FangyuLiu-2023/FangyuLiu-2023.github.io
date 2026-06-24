@@ -1,0 +1,74 @@
+{
+    "BSPC": {
+        "type":"journal",
+        "name": "Biomedical Signal Processing and Control",
+        "intro_cn": "新锐 2 区 Top, JCR 2 区, IF:5.7",
+        "intro_en": "XinRui Q2 Top, JCR Q2, IF:5.7"
+    },
+    "Int J Imag Syst Tech": {
+        "type":"journal",
+        "name": "International Journal of Imaging Systems and Technology",
+        "intro_cn": "新锐 3 区, JCR 2 区, IF:3.0",
+        "intro_en": "XinRui Q3, JCR Q2, IF:3.0"
+    },
+    "ESWA": {
+        "type":"journal",
+        "name": "Expert Systems With Applications",
+        "intro_cn": "CCF-C, 新锐 1 区 TOP, JCR 1 区, IF:9.4",
+        "intro_en": "CCF-C, XinRui Q1 Top, JCR Q1, IF:9.4"
+    },
+    "Comput Biol Med": {
+        "type":"journal",
+        "name": "Computers in Biology and Medicine",
+        "intro_cn": "",
+        "intro_en": ""
+    },
+    "BIBE": {
+        "type":"conference",
+        "name": "The 7th International Conference on Biological Information and Biomedical Engineering",
+        "intro_cn": "EI",
+        "intro_en": "EI"
+    },
+    "ICSTPA": {
+        "type":"conference",
+        "name": "Proceedings of the 2024 International Conference on Sports Technology and Performance Analysis",
+        "intro_cn": "EI",
+        "intro_en": "EI"
+    },
+    "IJCB": {
+        "type":"conference",
+        "name": "IEEE International Joint Conference on Biometrics",
+        "intro_cn": "CCF-C, EI",
+        "intro_en": "CCF-C, EI"
+    },
+    "UbiComp Companion": {
+        "type":"conference",
+        "name": "Companion of the 2025 on ACM International Joint Conference on Pervasive and Ubiquitous Computing",
+        "intro_cn": "UbiComp Workshop, CCF-A, EI",
+        "intro_en": "UbiComp Workshop, CCF-A, EI"
+    },
+    "TCE": {
+        "type":"journal",
+        "name": "IEEE Transactions on Consumer Electronics",
+        "intro_cn": "新锐 1 区 Top, JCR 1 区, IF:9.9",
+        "intro_en": "XinRui Q1 Top, JCR Q1, IF:9.9"
+    },
+    "Electronics": {
+        "type":"journal",
+        "name": "Electronics",
+        "intro_cn": "新锐 3 区, JCR 2 区, IF:2.9",
+        "intro_en": "XinRui Q3, JCR Q2, IF:2.9"
+    },
+    "ICASSP": {
+        "type":"conference",
+        "name": "IEEE International Conference on Acoustics, Speech and Signal Processing",
+        "intro_cn": "CCF-B, EI",
+        "intro_en": "CCF-B, EI"
+    },
+    "Measurement": {
+        "type":"journal",
+        "name": "Measurement",
+        "intro_cn": "新锐 2 区 Top, JCR 1 区, IF:6.1",
+        "intro_en": "XinRui Q2 Top, JCR Q1, IF:6.1"
+    }
+}
