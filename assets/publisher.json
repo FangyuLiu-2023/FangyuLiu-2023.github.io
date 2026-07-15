@@ -20,8 +20,8 @@
     "Comput Biol Med": {
         "type":"journal",
         "name": "Computers in Biology and Medicine",
-        "intro_cn": "",
-        "intro_en": ""
+        "intro_cn": "EI",
+        "intro_en": "EI"
     },
     "BIBE": {
         "type":"conference",
